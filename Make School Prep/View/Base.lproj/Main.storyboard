@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,21 +18,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XrN-fd-4Gd">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="366" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="posting cell" id="NM2-2f-oqw">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="posting cell" id="NM2-2f-oqw" customClass="PostCollectionViewCell" customModule="Make_School_Prep" customModuleProvider="target">
+                                <rect key="frame" x="4.5" y="0.0" width="366" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="366" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8H-w0-x0F">
+                                            <rect key="frame" x="9" y="15" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXs-Xe-9AN">
+                                            <rect key="frame" x="254" y="15" width="71" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.70196078429999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="customSize" width="50" height="50"/>
+                                <size key="customSize" width="366" height="50"/>
+                                <connections>
+                                    <outlet property="categoryLabel" destination="HXs-Xe-9AN" id="KdH-ut-FYr"/>
+                                    <outlet property="titleLabel" destination="L8H-w0-x0F" id="Mce-hp-cfw"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -39,11 +60,32 @@
                             <outlet property="delegate" destination="gSP-MC-FYu" id="02K-YW-3pi"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Home" id="ONH-oX-Ths"/>
+                    <navigationItem key="navigationItem" title="Home" id="ONH-oX-Ths">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dv3-Nh-s8y">
+                            <connections>
+                                <segue destination="U1T-30-TsJ" kind="show" id="sEJ-0O-EO4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evk-ua-z52" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1351.2" y="-484.40779610194909"/>
+            <point key="canvasLocation" x="1580" y="-572"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IP2-Fo-Phk">
+            <objects>
+                <viewController id="U1T-30-TsJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G1w-4g-r5B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gIW-n1-hQf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RkY-le-Ebn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2242" y="-573"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BOe-Ti-v6V">
